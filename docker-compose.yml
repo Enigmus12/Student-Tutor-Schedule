@@ -1,0 +1,11 @@
+services:
+  reservations-service:
+    image: reservations-service:latest
+    container_name: reservations-service
+    ports:
+      - "8090:8090"
+    restart: unless-stopped
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+    env_file:
+      - .env
